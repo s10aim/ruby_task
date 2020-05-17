@@ -1,3 +1,5 @@
+print "人数を入力してください > "
+
 people = gets.to_i
 price = 10000
 
