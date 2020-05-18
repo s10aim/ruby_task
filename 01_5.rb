@@ -10,14 +10,19 @@ print "プランを選択 > "
 plan_num = gets.to_i
 
 
-if plan_num == 1
+
+case plan_num
+when 1
   place = "沖縄"
-elsif plan_num == 2
+  price = 10000
+when 2
   place = "北海道"
-elsif plan_num == 3
+  price = 20000
+when 3
   place = "九州"
+  price = 15000
 else
-  puts "そのプランはありません"
+  puts "不正な値です"
   exit
 end
 
@@ -26,23 +31,13 @@ puts "#{place}旅行ですね、何人で行きますか？"
 print "人数を選択 > "
 people_num = gets.to_i
 
-if people_num < 0
+if people_num <= 0
   puts "不正な値です" 
   exit
 end
 
 
-sum = if plan_num == 1
-  people_num * 10000
-elsif plan_num == 2
-  people_num * 20000
-elsif plan_num == 3
-  people_num * 15000
-end
+sum = people_num * price
 
 puts "合計料金：¥#{sum}"
-
-
-
-
 
